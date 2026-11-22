@@ -90,7 +90,7 @@
         const data = await response.json();
         if (!Array.isArray(data.featured_finds)) return;
         const formatPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-        for (const item of data.featured_finds.slice(0, 3)) {
+        for (const item of data.featured_finds.slice(0, 6)) {
           if (!item || typeof item.title !== 'string' || !item.title.trim() ||
               typeof item.image_url !== 'string' || !item.image_url.startsWith('https://i.ebayimg.com/') ||
               typeof item.ebay_url !== 'string' || !/^https:\/\/www\.ebay\.com\/itm\/\d+$/.test(item.ebay_url) ||
