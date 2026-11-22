@@ -1,13 +1,20 @@
-
 {
   "featured_finds": [
     {
-      "sku": "L-0005",
-      "title": "AD&D 2E Planescape Planes of Chaos COMPLETE Boxed Set TSR 2603 1994",
-      "price": 119.99,
+      "sku": "L-0063",
+      "title": "AD&D 2e Greyhawk Player's Guide TSR 9578 (1998) Complete w/ Map",
+      "price": 44.99,
       "currency": "USD",
-      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/KO8AAeSw8Adq38sX/$_1.JPG?set_id=8800005007",
-      "ebay_url": "https://www.ebay.com/itm/336864544815"
+      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/l60AAeSwJ~1q-25c/$_1.JPG?set_id=8800005007",
+      "ebay_url": "https://www.ebay.com/itm/336900743192"
+    },
+    {
+      "sku": "L-0048",
+      "title": "Forgotten Realms Haunted Lands Trilogy + Realms of the Dead Anthology 4 PB Set",
+      "price": 64.99,
+      "currency": "USD",
+      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/B1gAAeSwxeZq8JVs/$_1.JPG?set_id=8800005007",
+      "ebay_url": "https://www.ebay.com/itm/336886982656"
     },
     {
       "sku": "L-0022",
@@ -18,12 +25,28 @@
       "ebay_url": "https://www.ebay.com/itm/336871185772"
     },
     {
-      "sku": "L-0063",
-      "title": "AD&D 2e Greyhawk Player's Guide TSR 9578 (1998) Complete w/ Map",
-      "price": 44.99,
+      "sku": "L-0015",
+      "title": "Dragonlance Ogre Titans Complete Trilogy Richard A Knaak 1st Prints 3 Book Set",
+      "price": 109.99,
       "currency": "USD",
-      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/l60AAeSwJ~1q-25c/$_1.JPG?set_id=8800005007",
-      "ebay_url": "https://www.ebay.com/itm/336900743192"
+      "image_url": "https://i.ebayimg.com/00/s/MTIwMFgxNjAw/z/xZUAAeSwVxNq4flD/$_57.PNG?set_id=880000500F",
+      "ebay_url": "https://www.ebay.com/itm/336867326702"
+    },
+    {
+      "sku": "L-0005",
+      "title": "AD&D 2E Planescape Planes of Chaos COMPLETE Boxed Set TSR 2603 1994",
+      "price": 119.99,
+      "currency": "USD",
+      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/KO8AAeSw8Adq38sX/$_1.JPG?set_id=8800005007",
+      "ebay_url": "https://www.ebay.com/itm/336864544815"
+    },
+    {
+      "sku": "L-0001",
+      "title": "AD&D 2nd Edition The Complete Book of Gnomes & Halflings PHBR9 TSR 2134 D&D",
+      "price": 42.99,
+      "currency": "USD",
+      "image_url": "https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/PfgAAeSwZypq3pfD/$_1.JPG?set_id=8800005007",
+      "ebay_url": "https://www.ebay.com/itm/336863066599"
     }
   ]
 }
