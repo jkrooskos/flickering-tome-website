@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,9 +20,7 @@
     "@type": "Organization",
     "name": "Flickering Tome",
     "url": "https://flickeringtome.com/",
-    "sameAs": [
-      "https://www.ebay.com/str/flickeringtome"
-    ]
+    "sameAs": ["https://www.ebay.com/str/flickeringtome"]
   }
   </script>
 </head>
@@ -31,7 +28,6 @@
   <div class="brand-banner">
     <img src="banner.png" alt="Vintage Dungeons &amp; Dragons books and modules arranged on a green background">
   </div>
-
   <header>
     <div class="wrap hero">
       <div class="eyebrow">Out of print. Not forgotten.</div>
@@ -40,7 +36,6 @@
       <a class="button" href="https://www.ebay.com/str/flickeringtome">Browse the Shop</a>
     </div>
   </header>
-
   <main>
     <section id="about">
       <div class="wrap">
@@ -50,12 +45,10 @@
             <h3>Old School RPGs</h3>
             <p>Vintage D&amp;D and AD&amp;D rulebooks, adventures, supplements, and boxed sets.</p>
           </article>
-
           <article class="card">
             <h3>RPG Fiction</h3>
             <p>Forgotten Realms, Dragonlance, Dark Sun, and other novels from legendary campaign settings.</p>
           </article>
-
           <article class="card">
             <h3>Appendix N &amp; Weird Fiction</h3>
             <p>Sword &amp; sorcery, pulp fantasy, cosmic horror, and the literature that inspired tabletop RPGs.</p>
@@ -63,7 +56,13 @@
         </div>
       </div>
     </section>
-
+    <section id="featured-finds" hidden>
+      <div class="wrap">
+        <div class="eyebrow">From the shelves</div>
+        <h2>Featured Finds</h2>
+        <div class="featured-grid" id="featured-finds-grid"></div>
+      </div>
+    </section>
     <section>
       <div class="wrap feature">
         <div class="feature-image">
@@ -78,9 +77,50 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="wrap">© 2026 Flickering Tome · flickeringtome.com</div>
   </footer>
+  <script>
+    (async function () {
+      const section = document.getElementById('featured-finds');
+      const grid = document.getElementById('featured-finds-grid');
+      try {
+        const response = await fetch('featured-finds.json');
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!Array.isArray(data.featured_finds)) return;
+        const formatPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+        for (const item of data.featured_finds.slice(0, 3)) {
+          if (!item || typeof item.title !== 'string' || !item.title.trim() ||
+              typeof item.image_url !== 'string' || !item.image_url.startsWith('https://i.ebayimg.com/') ||
+              typeof item.ebay_url !== 'string' || !/^https:\/\/www\.ebay\.com\/itm\/\d+$/.test(item.ebay_url) ||
+              typeof item.price !== 'number' || !Number.isFinite(item.price) || item.price < 0 ||
+              item.currency !== 'USD') continue;
+          const link = document.createElement('a');
+          link.className = 'featured-card';
+          link.href = item.ebay_url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          const img = document.createElement('img');
+          img.src = item.image_url;
+          img.alt = item.title;
+          img.loading = 'lazy';
+          const details = document.createElement('div');
+          details.className = 'featured-card-details';
+          const heading = document.createElement('h3');
+          heading.textContent = item.title;
+          const price = document.createElement('p');
+          price.className = 'featured-price';
+          price.textContent = formatPrice.format(item.price);
+          details.append(heading, price);
+          link.append(img, details);
+          grid.append(link);
+        }
+        if (grid.children.length) section.hidden = false;
+      } catch (error) {
+        console.warn('Featured Finds could not be loaded.', error);
+      }
+    })();
+  </script>
 </body>
 </html>
